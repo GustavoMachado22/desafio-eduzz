@@ -108,7 +108,7 @@ npx playwright test --ui
 
 ## Dependências para executar com docker
 - Ter uma IDE de sua preferência
-- Instalar Docker Desktop: [Download]([https://nodejs.org/en/download/current](https://www.docker.com/products/docker-desktop/))
+- Instalar Docker Desktop:  [Download](https://www.docker.com/products/docker-desktop/)
   
 > Clone o projeto
 ``` ruby
