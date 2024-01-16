@@ -1,0 +1,19 @@
+# Imagem base
+FROM mcr.microsoft.com/playwright:v1.16.2-focal
+
+# Copia o código do aplicativo para o diretório do aplicativo
+COPY . /e2e-playwright-lib
+
+# Define o diretório de trabalho
+WORKDIR /e2e-playwright-lib
+
+# Install dependencies
+RUN npm install
+
+# Install browsers
+RUN npx playwright install
+
+# Run playwright test
+CMD [ "npx", "playwright", "test", "--reporter=list" ]
+
+

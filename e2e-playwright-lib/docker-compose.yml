@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+
+  e2e_test:
+    build: 
+      context: .
+      dockerfile: dockerfile
+
+    image: eduzz_e2e_test
+    container_name: eduzz_e2e_test
+
+    volumes:
+      - ./results:/e2e-playwright-lib/playwright-report
