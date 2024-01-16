@@ -1,32 +1,45 @@
 name: Playwright Tests
+
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
   workflow_dispatch:
+
 jobs:
   e2e-tests:
-    timeout-minutes: 60
     runs-on: ubuntu-latest
-    steps:
-    - name: Get code
-      uses: actions/checkout@v3
 
-    - name: Install Node 18
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 18
 
-    - name: Install dependencies
-      run: npm install
+    - name: Install dependencies in e2e-playwright-lib
+      run: |
+        cd e2e-playwright-lib
+        npm install
 
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run:  |
+        cd e2e-playwright-lib
+        npx playwright install
 
     - name: Run E2E tests
-      run: npx playwright test
+      run:   |
+        cd e2e-playwright-lib
+        npx playwright test
 
+    - name: Generate HTML Report
+      run:    |
+        cd e2e-playwright-lib
+        npx playwright test --output=playwright-report/
+    
     - name: Publish HTML Report
       uses: actions/upload-artifact@v3
       if: always()
