@@ -38,7 +38,7 @@ criando teste que simula o comportamento do usuário final.
 ![Flow Eduzz](https://github.com/GustavoMachado22/desafio-eduzz/assets/64233343/4294cba5-2c30-49d8-90bf-084076c06a90)
 
 
-### Por quê utilizar o Robot Framework?
+### Por quê utilizar o Playwright?
 Playwright é uma excelente ferramenta para testes de ponta a ponta em navegadores da web. Aqui estão algumas razões pelas quais você pode querer usar o Playwright:
 
  - Suporte para múltiplos navegadores: Playwright suporta testes em vários navegadores, incluindo Chrome, Firefox, Safari e WebKit.
@@ -57,10 +57,6 @@ Playwright é uma excelente ferramenta para testes de ponta a ponta em navegador
 
  - Captura de tela e gravação de vídeo: Playwright pode capturar screenshots e gravar vídeos dos testes, o que pode ser útil para depuração e documentação.
  
-### Continuos Test
-Com `Github Actions` criamos uma `PIPE`, que executa nosso projeto de automação a cada `PUSH`.<br/> 
-Podendo ser executado também manualmente no menu de Actions!<br/> 
-O `CI` esta integrado com a `AWS` enviando os logs de resultado dos testes para armazenar em um `Bucket S3`.<br/> 
 
 <h1 align="center">
 Configurando o projeto 
@@ -106,20 +102,50 @@ npx playwright test --reporter=html
 npx playwright test --ui
 ```
 
+<h1 align="center">
+ Execução com docker
+</h1>
+
+## Dependências para executar com docker
+- Ter uma IDE de sua preferência
+- Instalar Docker Desktop: [Download]([https://nodejs.org/en/download/current](https://www.docker.com/products/docker-desktop/))
+  
+> Clone o projeto
+``` ruby
+git clone https://github.com/GustavoMachado22/desafio-eduzz.git
+cd e2e-playwright-lib
+npm install
+```
+## Instruções de execução com docker
+Use os comandos listados abaixo no terminal, no diretorio e2e-plawright-lib:
+
+> Executar o Build do container e o teste
+``` ruby
+docker-compose up --build
+```
+
+> Executar com teste com a imagem já criada
+``` ruby
+docker run eduzz_e2e_test
+```
 
 <h1 align="center">
 Executando Github Actions
 </h1>
 
-![Github-Actions](https://github.com/GustavoMachado22/desafio-eduzz/assets/64233343/f441494c-f556-4a95-8f63-fa66a3eb98d5)
+### Continuos Test
+Com `Github Actions` criamos uma `PIPE`, que executa nosso projeto de automação a cada `PUSH`.<br/> 
+Podendo ser executado também manualmente no menu de Actions!<br/> 
+O `CI` esta integrado com a `AWS` enviando os logs de resultado dos testes para armazenar em um `Bucket S3`.<br/> 
+
+![actions](https://github.com/GustavoMachado22/desafio-eduzz/assets/64233343/65c1bb97-83f3-4e7c-a9b6-78fa10fc2185)
+
 
 <h1 align="center">
 Enviando logs para o Bucket S3
 </h1>
 
-![Bucket-S3](https://github.com/GustavoMachado22/desafio-eduzz/assets/64233343/efecad6c-d4ed-4be8-a237-c9ade1513e54)
-
-
+![Bucket-S3](https://github.com/GustavoMachado22/desafio-eduzz/assets/64233343/f52a34c3-5d9d-4085-bd78-a413b3a2d08f)
 
 
 
@@ -133,7 +159,6 @@ Enviando logs para o Bucket S3
      
                           A passionate developer, currently working as Software QA Engineer at Zé Delivery.
 
-<img align="leaft" alt="Gif" height="300" width="1090" style="border-radius:50px;"  src="https://camo.githubusercontent.com/5dc6ee33381917e41fc9c4951799268998f11a9b864399bf79a0842e4f9b194d/68747470733a2f2f692e696d6775722e636f6d2f315a76566b44632e676966">
 
 <div align="center">
 <img height="150em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=GustavoMachado22&theme=radical"/> 
@@ -184,6 +209,4 @@ Enviando logs para o Bucket S3
   
  ## 📫 How to reach me?
 
-
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gustavohmachado/)
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/gustavoaxe/)
