@@ -129,6 +129,10 @@ docker-compose up --build
 docker run eduzz_e2e_test
 ```
 
+![Docker](https://github.com/GustavoMachado22/desafio-eduzz/assets/64233343/91d763a6-0763-4e97-a812-0c1e1b45ec1b)
+
+
+
 <h1 align="center">
 Executando Github Actions
 </h1>
