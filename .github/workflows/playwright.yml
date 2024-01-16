@@ -12,15 +12,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - name: Get Code
+      uses: actions/checkout@v3
 
-    - name: Set up Node.js
+    - name: Install Node 18
       uses: actions/setup-node@v3
       with:
         node-version: 18
 
-    - name: Install dependencies in e2e-playwright-lib
+    - name: Install dependencies
       run: |
         cd e2e-playwright-lib
         npm install
@@ -28,18 +28,13 @@ jobs:
     - name: Install Playwright Browsers
       run:  |
         cd e2e-playwright-lib
-        npx playwright install
+        npx playwright install --with-deps
 
     - name: Run E2E tests
       run:   |
         cd e2e-playwright-lib
         mkdir playwright-report
         npx playwright test
-
-    - name: Generate HTML Report
-      run:    |
-        cd e2e-playwright-lib
-        npx playwright test --output=playwright-report/
     
     - name: Publish HTML Report
       uses: actions/upload-artifact@v3
