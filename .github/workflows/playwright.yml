@@ -38,6 +38,7 @@ jobs:
     - name: Generate HTML Report
       run:    |
         cd e2e-playwright-lib
+        mkdir playwright-report
         npx playwright test --output=playwright-report/
     
     - name: Publish HTML Report
