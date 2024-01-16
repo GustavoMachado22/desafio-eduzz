@@ -11,4 +11,4 @@ services:
     container_name: eduzz_e2e_test
 
     volumes:
-      - ./results:/e2e-playwright-lib/playwright-report
+      - ./playwright-report:/e2e-playwright-lib/playwright-report
