@@ -8,7 +8,7 @@ Usar o Playwright para pesquisar no google a palavra Eduzz e verificar se o resu
 tem o texto ```"O Ecossistema Completo para Vender e Ensinar Online"```
 
 Regras:
-- Deve - se usar nossas boas práticas como padrão
+- Deve - se usar nossas [boas práticas](https://github.com/GustavoMachado22/desafio-eduzz/files/13964234/BOAS.PRA_TICAS.NA.AUTOMAC_A_O.DE.TESTES.docx) como padrão
 - Faça um bom readme para conseguir rodar os seus testes
 - Será avaliado o padrão de projeto e a estrutura dos testes
 
